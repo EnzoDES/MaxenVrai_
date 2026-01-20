@@ -86,7 +86,67 @@
                 <a class="button" href="https://www.twitch.tv/" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:5px;">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg" alt="Twitch" style="width:16px; height:16px;"> Twitch
                 </a>
-     
+
+
+
+	<div class="card" id="about" style="display:none;">
+    <h1>Qui sommes-nous ?</h1>
+
+    <p>
+        Les Vrais, c’est une communauté active et conviviale créée pour
+        s’amuser, jouer ensemble et partager de bons moments 🎮.
+    </p>
+
+    <p>
+        Notre Discord rassemble des personnes respectueuses, passionnées
+        et bienveillantes, dans une ambiance chill et sans prise de tête 😎
+    </p>
+
+    <p>
+        Que tu sois joueur, créateur de contenu ou juste à la recherche
+        d’un endroit sympa, tu es le bienvenu ❤️
+    </p>
+
+    <a class="button" onclick="showSection('accueil')">
+        ⬅ Retour à l’accueil
+    </a>
+</div>
+
+
+	<div class="card" id="accueil">
+    <h1>Bienvenue chez Les Vrais 🎮</h1>
+    <p>Une vraie communauté. Une vraie ambiance.</p>
+
+    <a class="button" href="#" onclick="showSection('about')">
+        👉 Qui sommes-nous ?
+    </a>
+</div>
+
+<div class="card" id="about" style="display:none;">
+    <h1>Qui sommes-nous ?</h1>
+
+    <p>
+        Les Vrais, c’est une communauté active et conviviale
+        dont le but est simple : s’amuser ensemble 🎮
+    </p>
+
+    <a class="button" href="#" onclick="showSection('accueil')">
+        ⬅ Retour à l’accueil
+    </a>
+</div>
+   <script>
+function showSection(section) {
+    document.getElementById("accueil").style.display = "none";
+    document.getElementById("about").style.display = "none";
+
+    document.getElementById(section).style.display = "block";
+}
+</script>
+
+
+
+
+	
 </div>
 <footer>
     <p>Copyright © 2026 by ebyvousez_ / All rights reserved</p>
@@ -94,6 +154,7 @@
 
 </body>
 </html>
+
 
 
 
