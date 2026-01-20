@@ -89,12 +89,50 @@
      
 </div>
 
+	
+    <a class="button" onclick="showSection('about')">
+        👉 Qui sommes-nous ?
+	</a>
+
+	<script>
+function showSection(section) {
+    document.getElementById("accueil").style.display = "none";
+    document.getElementById("about").style.display = "none";
+
+    document.getElementById(section).style.display = "block";
+}
+	</script>
+
+	<div class="card" id="about" style="display:none;">
+    <h1>Qui sommes-nous ?</h1>
+
+    <p>
+        Les Vrais, c’est une communauté active et conviviale créée pour
+        s’amuser, jouer ensemble et partager de bons moments 🎮.
+    </p>
+
+    <p>
+        Notre Discord rassemble des personnes respectueuses, passionnées
+        et bienveillantes, dans une ambiance chill et sans prise de tête 😎
+    </p>
+
+    <p>
+        Que tu sois joueur, créateur de contenu ou juste à la recherche
+        d’un endroit sympa, tu es le bienvenu ❤️
+    </p>
+
+    <a class="button" onclick="showSection('accueil')">
+        ⬅ Retour à l’accueil
+    </a>
+	</div>
+
 <footer>
     <p>Copyright © 2026 by ebyvousez_ / All rights reserved</p>
 </footer>
 
 </body>
 </html>
+
 
 
 
