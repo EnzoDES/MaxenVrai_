@@ -76,6 +76,38 @@
     <p>Tu souhaite nous rejoindre ? Retrouve nos differentes pages web ci-dessous 👇</p> 
 </header>
 <div class="card">
+	<main>
+    <div class="card">
+        <h2>🤖 Chat avec l’IA</h2>
+        <div id="chatBox" style="height:300px; overflow:auto; border:1px solid #ccc; padding:10px; background:#1a1a1a;"></div>
+        <input type="text" id="userInput" placeholder="Pose une question à l’IA" style="width:70%;">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 Les Vrais / Tous droits réservés</p>
+</footer>
+
+<script>
+async function sendMessage() {
+    const input = document.getElementById("userInput").value;
+    if (!input) return;
+    const chatBox = document.getElementById("chatBox");
+    chatBox.innerHTML += `<p><strong>Vous :</strong> ${input}</p>`;
+    document.getElementById("userInput").value = '';
+
+    // Appel backend IA gratuit (Hugging Face)
+    const response = await fetch("/ask", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({prompt: input})
+    });
+    const data = await response.json();
+    chatBox.innerHTML += `<p><strong>IA :</strong> ${data.reply}</p>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+</script>
     <h2>👥 Qui sommes-nous ?</h2>
 
     <p>
@@ -143,45 +175,13 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style="width:16px; height:16px;"> Instagram
                 </a>
 </div>
-
-<main>
-    <div class="card">
-        <h2>🤖 Chat avec l’IA</h2>
-        <div id="chatBox" style="height:300px; overflow:auto; border:1px solid #ccc; padding:10px; background:#1a1a1a;"></div>
-        <input type="text" id="userInput" placeholder="Pose une question à l’IA" style="width:70%;">
-        <button onclick="sendMessage()">Envoyer</button>
-    </div>
-</main>
-
-<footer>
-    <p>© 2026 Les Vrais / Tous droits réservés</p>
-</footer>
-
-<script>
-async function sendMessage() {
-    const input = document.getElementById("userInput").value;
-    if (!input) return;
-    const chatBox = document.getElementById("chatBox");
-    chatBox.innerHTML += `<p><strong>Vous :</strong> ${input}</p>`;
-    document.getElementById("userInput").value = '';
-
-    // Appel backend IA gratuit (Hugging Face)
-    const response = await fetch("/ask", {
-        method: "POST",
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({prompt: input})
-    });
-    const data = await response.json();
-    chatBox.innerHTML += `<p><strong>IA :</strong> ${data.reply}</p>`;
-    chatBox.scrollTop = chatBox.scrollHeight;
-}
-</script>
 <footer>
     <p>Copyright © 2026 by ebyvousez_ / All rights reserved</p>
 </footer>
 
 </body>
 </html>
+
 
 
 
