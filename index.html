@@ -143,14 +143,37 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style="width:16px; height:16px;"> Instagram
                 </a>
 </div>
+
+	<input type="text" id="userInput" placeholder="Pose-moi une question">
+<button onclick="sendMessage()">Envoyer</button>
+<div id="chat"></div>
+
+<script>
+async function sendMessage() {
+    const input = document.getElementById("userInput").value;
+    const chatDiv = document.getElementById("chat");
+
+    // Ici tu appellerais ton serveur qui communique avec OpenAI API
+    const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({message: input})
+    });
+
+    const data = await response.json();
+    chatDiv.innerHTML += `<p><strong>Vous :</strong> ${input}</p>`;
+    chatDiv.innerHTML += `<p><strong>IA :</strong> ${data.reply}</p>`;
+    document.getElementById("userInput").value = '';
+}
+</script>
+
+
 <footer>
     <p>Copyright © 2026 by ebyvousez_ / All rights reserved</p>
 </footer>
 
 </body>
 </html>
-
-
 
 
 
