@@ -65,35 +65,29 @@
     gap: 20px;
     margin-top: 20px;
 }
-
-.video-tile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1a1a1a;
+		.twitch-container {
+    width: 720px;
+    height: 300px; 
+    overflow: hidden;
+    margin: 0 auto;
     border-radius: 10px;
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.video-tile img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.video-tile span {
-    margin-top: 10px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.video-tile:hover {
-    transform: scale(1.05);
     box-shadow: 0 0 15px rgba(114, 137, 218, 0.7);
 }
+
+#twitchIframe {
+    display: block;
+    width: 100%;
+    height: 480px; 
+    transform: translateY(0);
+    animation: scrollLive 20s linear infinite;
+}
+
+@keyframes scrollLive {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-60px); } 
+    100% { transform: translateY(0); }
+
+
     </style>
 </head>
 <body>
@@ -109,6 +103,21 @@
         margin:20px auto;
      ">
 		<strong>MaxenVrai_</strong>
+	 <div class="card" id="twitch-live">
+    <h2>🟢 Live Twitch</h2>
+    
+    <div class="twitch-container">
+        <iframe
+            src="https://player.twitch.tv/?channel=maxenvrai_&parent=TON_DOMAINE&autoplay=true"
+            height="480"
+            width="720"
+            allowfullscreen="true"
+            scrolling="no"
+            frameborder="0"
+            id="twitchIframe">
+        </iframe>
+    </div>
+</div>
     <h1>📢 Bienvenue chez les Vrais !</h1>
     <p>Tu souhaite nous rejoindre ? Retrouve nos differentes pages web ci-dessous 👇</p> 
 </header>
@@ -180,44 +189,13 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style="width:16px; height:16px;"> Instagram
                 </a>
 </div>
-
-	<div class="card" id="live-videos">
-    <h2>📺 Live & vidéos</h2>
-
-    <div class="video-grid">
-        <!-- Twitch Live -->
-        <a href="https://www.twitch.tv/maxenvrai_" target="_blank" class="video-tile">
-            <img src="images/twitch-live.png" alt="Live Twitch">
-            <span>🟢 En direct sur Twitch</span>
-        </a>
-
-        <!-- Dernières vidéos YouTube -->
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank" class="video-tile">
-            <img src="images/youtube1.png" alt="Dernière vidéo YouTube">
-            <span>📹 YouTube #1</span>
-        </a>
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" class="video-tile">
-            <img src="images/youtube2.png" alt="Dernière vidéo YouTube">
-            <span>📹 YouTube #2</span>
-        </a>
-
-        <!-- Derniers TikTok -->
-        <a href="https://www.tiktok.com/@maxenvrai_/video/TIKTOK_ID_1" target="_blank" class="video-tile">
-            <img src="images/tiktok1.png" alt="Dernier TikTok">
-            <span>🎵 TikTok #1</span>
-        </a>
-        <a href="https://www.tiktok.com/@maxenvrai_/video/TIKTOK_ID_2" target="_blank" class="video-tile">
-            <img src="images/tiktok2.png" alt="Dernier TikTok">
-            <span>🎵 TikTok #2</span>
-        </a>
-    </div>
-</div>
 <footer>
     <p>Copyright © 2026 by ebyvousez_ / All rights reserved</p>
 </footer>
 
 </body>
 </html>
+
 
 
 
