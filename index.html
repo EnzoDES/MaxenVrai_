@@ -86,7 +86,22 @@
     0% { transform: translateY(0); }
     50% { transform: translateY(-60px); } 
     100% { transform: translateY(0); }
+	
+.twitch-container {
+    width: 100%;          
+    max-width: 720px;     
+    height: 405px;        
+    overflow: hidden;     
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(114, 137, 218, 0.7);
+}
 
+.twitch-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
 
     </style>
 </head>
@@ -103,8 +118,12 @@
         margin:20px auto;
      ">
 		<strong>MaxenVrai_</strong>
+    <h1>📢 Bienvenue chez les Vrais !</h1>
+    <p>Tu souhaite nous rejoindre ? Retrouve nos differentes pages web ci-dessous 👇</p> 
+</header>
+<div class="card">
 	 <div class="card" id="twitch-live">
-    <h2>🟢 Live Twitch</h2>
+    <h2>🔴En Live</h2>
     
     <div class="twitch-container">
         <iframe
@@ -118,10 +137,6 @@
         </iframe>
     </div>
 </div>
-    <h1>📢 Bienvenue chez les Vrais !</h1>
-    <p>Tu souhaite nous rejoindre ? Retrouve nos differentes pages web ci-dessous 👇</p> 
-</header>
-<div class="card">
     <h2>👥 Qui sommes-nous ?</h2>
 
     <p>
@@ -195,6 +210,7 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
 
 </body>
 </html>
+
 
 
 
